@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Lamborghini</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about-style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navdiv">
+    <div class="logo">
+      <a href="navbar.html">
+        <img src="./images/lamborghini_PNG10709.png" alt="Lamborghini Logo" class="logo-img">
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-index.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="model.html">Models</a></li>
+      <li><a href="contact-us-index.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</div>
+
+<div class="about-container">
+  <div class="about-section">
+    <div class="about-header">
+      <h1>About Lamborghini</h1>
+      <p class="subtitle">Luxury • Performance • Innovation</p>
+    </div>
+
+    <div class="about-content">
+      <div class="history-section">
+        <h2>Our Heritage</h2>
+        <p>
+          Manufacturing magnate Italian Ferruccio Lamborghini founded the company in 1963 with the objective of producing a refined grand touring car to compete with offerings from established marques such as Ferrari. The company's first models, such as the 350 GT, were released in the mid-1960s.
+        </p>
+        
+        <p>
+          Lamborghini was noted for the 1966 Miura sports coupé, which used a rear mid-engine, rear-wheel drive layout that became the standard for high-performance sports cars. This revolutionary design established Lamborghini as a serious competitor in the luxury automotive market.
+        </p>
+      </div>
+
+      <div class="company-info">
+        <h2>Company Overview</h2>
+        <p>
+          Lamborghini, colloquially known as Lambo, is an Italian manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese. The company is owned by the Volkswagen Group through its subsidiary Audi, ensuring continued innovation and financial stability.
+        </p>
+        
+        <p>
+          In 1963, Ferruccio Lamborghini, already an established industrialist who manufactured tractors, boilers, and air conditioners, founded Lamborghini Automobili on May 7, 1963. His vision was to create the perfect grand touring car.
+        </p>
+      </div>
+
+      <div class="current-lineup">
+        <h2>Current Models (2025)</h2>
+        <ul class="model-list">
+          <li><strong>Temerario:</strong> Twin-turbo V8 plug-in hybrid supercar</li>
+          <li><strong>Urus:</strong> Luxury SUV powered by a twin-turbo V8 engine</li>
+          <li><strong>Revuelto:</strong> V12/electric hybrid flagship model</li>
+          <li><strong>Marine Engines:</strong> V12 engines for offshore powerboat racing</li>
+        </ul>
+      </div>
+
+      <div class="legacy-section">
+        <h2>Legacy & Innovation</h2>
+        <ul class="legacy-list">
+          <li>Lamborghini Trattori, founded in 1948 by Ferruccio Lamborghini, continues to produce tractors and has been a separate entity since 1973</li>
+          <li>Pioneer of the mid-engine supercar layout with the iconic Miura</li>
+          <li>Continuous innovation in hybrid technology and sustainable performance</li>
+          <li>Survived the Great Recession when sales dropped nearly 50% in the late 2000s, emerging stronger than ever</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 This website is for project purposes only.</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/johnjohn.valincia.3" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/primo_unlucky?igsh=ZTkxMnU0cGJvNm5t" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@JohnRondelDelaRoca" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle functionality
+const mobileToggle = document.getElementById('mobileToggle');
+const navMenu = document.getElementById('navMenu');
+
+mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const icon = mobileToggle.querySelector('i');
+    
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+</script>
+
+</body>
+</html>

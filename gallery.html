@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Models - Lamborghini</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/model.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navdiv">
+    <div class="logo">
+      <a href="navbar.html">
+        <img src="./images/lamborghini_PNG10709.png" alt="Lamborghini Logo" class="logo-img">
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-index.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="model.html">Models</a></li>
+      <li><a href="contact-us-index.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</div>
+
+<div class="models-container">
+  <div class="models-section">
+    <div class="models-header">
+      <h1>Lamborghini Models</h1>
+      <p class="subtitle">Discover Our Legendary Supercars</p>
+    </div>
+
+    <div class="category-filters">
+      <button class="filter-btn active" data-category="all">All Models</button>
+      <button class="filter-btn" data-category="supercar">Supercars</button>
+      <button class="filter-btn" data-category="suv">SUV</button>
+      <button class="filter-btn" data-category="hybrid">Hybrid</button>
+    </div>
+
+    <div class="models-grid">
+      <!-- Temerario -->
+      <div class="model-card" data-category="supercar hybrid">
+        <div class="model-image" data-model="temerario">
+          <img src="./img.temerario/temerariomain.jpg" alt="Lamborghini Temerario">
+          <div class="model-overlay">
+            <span>View Details</span>
+          </div>
+        </div>
+        <div class="model-info">
+          <h3>Temerario</h3>
+          <p class="model-type">Twin-Turbo V8 Plug-in Hybrid</p>
+          <p class="model-description">The latest evolution in Lamborghini's supercar lineage, combining raw power with cutting-edge hybrid technology.</p>
+          <div class="model-price">Starting at ₱13,598,597.1268</div>
+        </div>
+      </div>
+
+      <!-- Revuelto -->
+      <div class="model-card" data-category="supercar hybrid">
+        <div class="model-image" data-model="revuelto">
+          <img src="./img.revuelto/revueltomain.webp" alt="Lamborghini Revuelto">
+          <div class="model-overlay">
+            <span>View Details</span>
+          </div>
+        </div>
+        <div class="model-info">
+          <h3>Revuelto</h3>
+          <p class="model-type">V12/Electric Hybrid</p>
+          <p class="model-description">The flagship of Lamborghini's fleet, featuring a revolutionary V12 hybrid powertrain for unmatched performance.</p>
+          <div class="model-price">Starting at ₱25,497,369.6128</div>
+        </div>
+      </div>
+
+      <!-- Urus -->
+      <div class="model-card" data-category="suv">
+        <div class="model-image" data-model="urus">
+          <img src="./img.urus/urusmain.jpg" alt="Lamborghini Urus">
+          <div class="model-overlay">
+            <span>View Details</span>
+          </div>
+        </div>
+        <div class="model-info">
+          <h3>Urus</h3>
+          <p class="model-type">Twin-Turbo V8 SUV</p>
+          <p class="model-description">The world's first super sports utility vehicle, combining Lamborghini DNA with everyday usability.</p>
+          <div class="model-price">Starting at ₱13,031,988.9132</div>
+        </div>
+      </div>
+
+      <!-- Huracan -->
+      <div class="model-card" data-category="supercar">
+        <div class="model-image" data-model="huracan">
+          <img src="./img.huracan/huracanmain.jpg" alt="Lamborghini Huracan">
+          <div class="model-overlay">
+            <span>View Details</span>
+          </div>
+        </div>
+        <div class="model-info">
+          <h3>Huracan</h3>
+          <p class="model-type">Naturally Aspirated V10</p>
+          <p class="model-description">Pure driving emotion with the legendary naturally aspirated V10 engine delivering extraordinary performance.</p>
+          <div class="model-price">Starting at ₱12,456,380.6996</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modelModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modalBody">
+      <!-- Modal content will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 This website is for project purposes only.</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/johnjohn.valincia.3" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/primo_unlucky?igsh=ZTkxMnU0cGJvNm5t" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@JohnRondelDelaRoca" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle functionality
+const mobileToggle = document.getElementById('mobileToggle');
+const navMenu = document.getElementById('navMenu');
+
+mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const icon = mobileToggle.querySelector('i');
+    
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Model data
+  const modelData = {
+    temerario: {
+      title: 'Lamborghini Temerario',
+      image: './img.temerariro/temerariomain',
+      specs: {
+        'Engine': 'Twin-Turbo V8 Plug-in Hybrid',
+        'Power': '900+ HP',
+        'Top Speed': '350+ km/h',
+        'Acceleration': '0-100 km/h in 2.7s',
+        'Price': 'Starting at $240,000'
+      },
+      description: 'The Temerario represents the perfect fusion of Lamborghini\'s racing heritage and sustainable innovation. With its twin-turbo V8 hybrid powertrain, it delivers unprecedented performance while embracing the future of supercars.'
+    },
+    revuelto: {
+      title: 'Lamborghini Revuelto',
+      image: 'revuelto1.jpg',
+      specs: {
+        'Engine': 'V12/Electric Hybrid',
+        'Power': '1000+ HP',
+        'Top Speed': '350+ km/h',
+        'Acceleration': '0-100 km/h in 2.5s',
+        'Price': 'Starting at $450,000'
+      },
+      description: 'The Revuelto is Lamborghini\'s flagship model, featuring the most advanced hybrid technology combined with the iconic V12 engine. It represents the pinnacle of automotive engineering and design.'
+    },
+    urus: {
+      title: 'Lamborghini Urus',
+      image: 'urus1.jpg',
+      specs: {
+        'Engine': 'Twin-Turbo V8',
+        'Power': '650 HP',
+        'Top Speed': '305 km/h',
+        'Acceleration': '0-100 km/h in 3.6s',
+        'Price': 'Starting at $230,000'
+      },
+      description: 'The Urus is the world\'s first super sports utility vehicle, combining the soul of a sports car with the functionality of an SUV. It offers unparalleled performance and versatility.'
+    },
+    huracan: {
+      title: 'Lamborghini Huracan',
+      image: 'huracan1.jpg',
+      specs: {
+        'Engine': 'Naturally Aspirated V10',
+        'Power': '630 HP',
+        'Top Speed': '325 km/h',
+        'Acceleration': '0-100 km/h in 3.2s',
+        'Price': 'Starting at $220,000'
+      },
+      description: 'The Huracan embodies the pure essence of Lamborghini with its naturally aspirated V10 engine. It delivers an authentic supercar experience with extraordinary performance and emotional engagement.'
+    }
+  };
+
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const modelCards = document.querySelectorAll('.model-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const category = this.getAttribute('data-category');
+      
+      modelCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Modal functionality
+  const modal = document.getElementById('modelModal');
+  const modalBody = document.getElementById('modalBody');
+  const closeBtn = document.querySelector('.close');
+  
+  // Add click event to all model images
+  const modelImages = document.querySelectorAll('.model-image');
+  modelImages.forEach(imageDiv => {
+    imageDiv.addEventListener('click', function() {
+      const modelName = this.getAttribute('data-model');
+      openModal(modelName);
+    });
+  });
+
+  function openModal(model) {
+    const data = modelData[model];
+    
+    if (data) {
+      modalBody.innerHTML = `
+        <div class="modal-header">
+          <h2>${data.title}</h2>
+        </div>
+        <div class="modal-image">
+          <img src="${data.image}" alt="${data.title}">
+        </div>
+        <div class="modal-details">
+          <div class="specs-grid">
+            ${Object.entries(data.specs).map(([key, value]) => `
+              <div class="spec-item">
+                <span class="spec-label">${key}:</span>
+                <span class="spec-value">${value}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="model-description">
+            <p>${data.description}</p>
+          </div>
+        </div>
+      `;
+      
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  // Close modal events
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

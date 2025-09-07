@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Lamborghini</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/contact-us-style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="navdiv">
+    <div class="logo">
+      <a href="navbar.html">
+        <img src="./images/lamborghini_PNG10709.png" alt="Lamborghini Logo" class="logo-img">
+      </a>
+    </div>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="navbar.html">Home</a></li>
+      <li><a href="about-index.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="model.html">Models</a></li>
+      <li><a href="contact-us-index.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-menu-toggle" id="mobileToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</div>
+
+<div class="contact-container">
+  <div class="contact-section">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p class="subtitle">Get in Touch with Lamborghini</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Headquarters</h3>
+            <p>Sant'Agata Bolognese, Italy<br>Via Modena, 12<br>40019 Sant'Agata Bolognese BO</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>+39 051 681 7611</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>johnrondel@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h3>Business Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form>
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>&copy; 2025 This website is for project purposes only.</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/johnjohn.valincia.3" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/primo_unlucky?igsh=ZTkxMnU0cGJvNm5t" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@JohnRondelDelaRoca" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle functionality
+const mobileToggle = document.getElementById('mobileToggle');
+const navMenu = document.getElementById('navMenu');
+
+mobileToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const icon = mobileToggle.querySelector('i');
+    
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    });
+});
+
+// Form submission handler
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // Simple validation
+    if (name && email && message) {
+        alert('Thank you for your message! We will get back to you soon.');
+        // Reset form
+        this.reset();
+    } else {
+        alert('Please fill in all required fields.');
+    }
+});
+</script>
+
+</body>
+</html>
